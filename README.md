@@ -46,8 +46,6 @@ brew --version
 
 Если команда отсутствует, выполните:
 
-Иструкция взята с [Homebrew](https://docs.brew.sh/Installation)
-
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
@@ -55,9 +53,11 @@ brew --version
 После завершения установки:
 
 ```bash
-source ~/.zprofile
+source ~/.zshrc
 brew update
 ```
+
+или перезагрузите терминал.g
 
 ---
 
