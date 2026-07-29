@@ -40,6 +40,8 @@
 
 Проверьте, установлен ли Homebrew:
 
+Взято с оффицеального сайта [Homebrew](https://brew.sh/)
+
 ```bash
 brew --version
 ```
