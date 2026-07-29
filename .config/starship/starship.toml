@@ -1,0 +1,29 @@
+"$schema" = "https://starship.rs"
+
+add_newline = false
+
+# Главный формат строки
+# \n переносит символ ввода на следующую строку
+format = "$directory$git_branch$nodejs$jobs$cmd_duration\n$character"
+
+[directory]
+format = "[$path](bold cyan) "
+truncation_length = 0          # Никогда не сокращать путь
+truncate_to_repo = false       # Не обрезать путь до корня Git-репозитория
+fish_style_pwd_dir_length = 0  # Не сокращать названия папок
+
+[nodejs]
+symbol = " "
+format = "[$symbol](bold green) "
+detect_files = ["package.json", ".node-version", ".nvmrc", "jsconfig.json", "tsconfig.json"]
+detect_folders = ["node_modules"]
+
+[jobs]
+symbol = " "
+format = "[$symbol$number](bold red) "
+number_threshold = 1
+disabled = false
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[➜](bold red) "

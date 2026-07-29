@@ -1,1 +1,202 @@
-# dots
+# 🚀 Terminal Setup
+
+Этот репозиторий содержит готовые конфигурации для настройки современного терминального окружения.
+
+После выполнения всех шагов вы получите единую рабочую среду, где все инструменты работают вместе и используют одну цветовую схему.
+
+Будут настроены:
+
+- **Alacritty** — быстрый терминал.
+- **Zsh** — современная командная оболочка.
+- **Starship** — минималистичный двухстрочный промпт.
+- **Tinted** — единая система тем.
+- **Git Delta** — красивый просмотр изменений Git.
+- **zoxide** — умная навигация по каталогам.
+- **eza** — современная замена `ls`.
+- **fzf** — быстрый интерактивный поиск.
+- **fd** — удобная замена `find`.
+- **ripgrep** — быстрый поиск по файлам.
+- **bat** — улучшенная версия `cat`.
+
+---
+
+# 📦 1. Установка Homebrew
+
+Проверьте, установлен ли Homebrew:
+
+```bash
+brew --version
+```
+
+Если команда отсутствует, выполните:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+После завершения установки:
+
+```bash
+source ~/.zprofile
+brew update
+```
+
+---
+
+# 📦 2. Установка всех CLI-инструментов
+
+Скопируйте и выполните:
+
+```bash
+brew install \
+zsh \
+starship \
+zoxide \
+eza \
+fzf \
+fd \
+ripgrep \
+bat \
+git-delta \
+tinty \
+zsh-autosuggestions \
+zsh-syntax-highlighting
+```
+
+---
+
+# 🖥️ 3. Установка терминала
+
+```bash
+brew install --cask alacritty
+```
+
+---
+
+# 🔤 4. Установка шрифта
+
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+---
+
+# ⚙️ 5. Создание конфигураций
+
+Создайте необходимые каталоги:
+
+```bash
+mkdir -p \
+~/.config/alacritty \
+~/.config/starship \
+~/.config/tinted-theming/tinty
+```
+
+После этого просто скопируйте файлы из этого репозитория в соответствующие директории:
+
+| Файл             | Куда скопировать                             |
+| ---------------- | -------------------------------------------- |
+| `.zshrc`         | `~/.zshrc`                                   |
+| `starship.toml`  | `~/.config/starship/starship.toml`           |
+| `alacritty.toml` | `~/.config/alacritty/alacritty.toml`         |
+| `colors.toml`    | `~/.config/alacritty/colors.toml`            |
+| `config.toml`    | `~/.config/tinted-theming/tinty/config.toml` |
+
+---
+
+# 🎨 6. Настройка Tinted
+
+Загрузите шаблоны:
+
+```bash
+tinty sync
+```
+
+Примените тему:
+
+```bash
+tinty apply base16-mocha
+```
+
+---
+
+# 🔀 7. Настройка Git Delta
+
+```bash
+git config --global core.pager delta
+git config --global interactive.diffFilter "delta --color-only"
+```
+
+---
+
+# 🔄 8. Перезапуск оболочки
+
+```bash
+source ~/.zshrc
+```
+
+или
+
+```bash
+exec zsh
+```
+
+---
+
+# ✅ Проверка
+
+Если всё прошло успешно, должны выполняться команды:
+
+```bash
+starship --version
+```
+
+```bash
+zoxide --version
+```
+
+```bash
+fzf --version
+```
+
+```bash
+rg --version
+```
+
+```bash
+delta --version
+```
+
+```bash
+tinty --version
+```
+
+---
+
+# 🎨 Смена темы
+
+Посмотреть список доступных тем:
+
+```bash
+tinty list
+```
+
+Открыть галерею тем:
+
+```bash
+tinty gallery
+```
+
+Применить другую тему:
+
+```bash
+tinty apply base16-gruvbox-dark-medium
+```
+
+---
+
+# 🎉 Готово
+
+После настройки вы получите полностью готовое терминальное окружение с единым стилем оформления.
+
+Все конфигурации уже подготовлены — достаточно выполнить команды выше и скопировать файлы из репозитория в указанные директории.
